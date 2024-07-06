@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" id="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACCEPT COOKIE.HOME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shh.css">
+
+</head>
+
+<body>
+<header>
+    <hr>
+    <h1 id="hd">ACCEPT COOKIE</h1>
+    <hr>
+</header>
+<nav>
+    <button class="btn" type="button" onclick="openlinks()">
+        <strong>LINKS TO ENTERTAINMENT</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </button>
+
+    <button class="btn1" type="button" onclick="opensocial()">
+        <strong>LINKS TO SOCIAL MEDIA</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </button>
+</nav>
+<br>
+<h1>DESCRIPTION</h1>
+<hr style="background-color: #1A1A1A">
+<p id="dis">Welcome to our dynamic site, offering two enticing buttons for your exploration. Click "Links to Entertainment" for a diverse array of movies, games, and music, satisfying every entertainment craving. Dive into the latest blockbusters, immersive gaming experiences, and melodious tunes, ensuring there's something for every taste. Seeking social connection? Hit "Links to Social Media" to access a variety of platforms, fostering friendships and community engagement. Whether you're in the mood for thrilling entertainment escapades or eager to forge new digital connections, our website is your gateway to endless possibilities. Embark on your journey today and let the adventure unfold at your fingertips, where excitement and connectivity await.</p>
+<hr style="background-color: #1A1A1A">
+<div id="cookie-popup">
+    <p class="cookieHeading">Cookies.</p>
+    <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="63.html">What for?</a></p>
+    <button id="accept-cookies">Understood</button>
+</div>
+
+
+<footer>
+    <div><em>&copy;Sanchit's Work</em></div>
+</footer>
+
+<script>
+    function openlinks() {
+        window.location.href = 'cookie.html';
+    }
+
+    function opensocial() {
+        window.location.href = 'COOKIE_social.html';
+    }
+
+    function checkCookieConsent() {
+        return localStorage.getItem('cookie_consent');
+    }
+
+    function showCookiePopup() {
+        if (!checkCookieConsent()) {
+            document.getElementById('cookie-popup').style.display = 'block';
+        }
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookie_consent', 'true');
+        document.getElementById('cookie-popup').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
+        showCookiePopup();
+    });
+</script>
+</body>
+
+</html>
